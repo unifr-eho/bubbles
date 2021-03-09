@@ -6,7 +6,7 @@
 //
 // -----------------------------------------------------------------*/    
 
-d3.csv('assets/data/data2.csv', display); // Daten laden
+d3.csv('assets/data/data3.csv', display); // Daten laden
 setupButtons(); // Button Setup
 
 //* ------------------------------------------------------------------
@@ -85,27 +85,27 @@ function bubbleChart() {
 // Erster Button: agecat (Alterskategorie)   
  
 var agecatCenters = { // Center locations of the bubbles.
-    1: { x: 250, y: height / 2 },
-    2: { x: 400, y: height / 2 },
-    3: { x: 600, y: height / 2 },
-    4: { x: 750, y: height / 2 }
+    1: { x: 200, y: height / 2 },
+    2: { x: 380, y: height / 2 },
+    3: { x: 570, y: height / 2 },
+    4: { x: 780, y: height / 2 }
   };
 
   var agecatTitleX = { // X locations of the year titles.
-    'Bis 15': 100,
-    '15 bis 20': 340,
-    '20 bis 30': 620,
-    'Älter als 30': 870
+    'Bis 15 Jahre': 100,
+    '15 bis 20 Jahre': 340,
+    '20 bis 30 Jahre': 620,
+    'Älter als 30 Jahre': 870
   };
     
     
 // Zweiter Button: Geschlecht
     
   var sexCenters = { // Center locations of the bubbles. 
-    1: { x: 250, y: height / 2  },
-    2: { x: 400, y: height / 2  },
-    3: { x: 550, y: height / 2  },
-    4: { x: 700, y: height / 2  }
+    'Maennlich': { x: 220, y: height / 2  },
+    'Weiblich': { x: 420, y: height / 2  },
+    'Non-Binaer': { x: 600, y: height / 2  }
+    
   };
 
   var sexTitleX = {  // X locations of the year titles.
@@ -119,18 +119,18 @@ var agecatCenters = { // Center locations of the bubbles.
 // Dritter Button: Bildschirmzeit
     
   var screentimeCenters = { // Center locations of the bubbles. 
-    1: { x: 250, y: height / 2 },
-    2: { x: 350, y: height / 2 },
-    3: { x: 450, y: height / 2 },
-    4: { x: 550, y: height / 2 },
-    5: { x: 650, y: height / 2 },
-    6: { x: 750, y: height / 2 } 
+    'weniger als 1h': { x: 180, y: height / 2 },
+    '1h-2h': { x: 300, y: height / 2 },
+    '2h-3h': { x: 420, y: height / 2 },
+    '3h-4h': { x: 550, y: height / 2 },
+    '4h-5h': { x: 700, y: height / 2 },
+    'Mehr als 5h': { x: 850, y: height / 2 } 
   };
 
   var screentimeTitleX = {  // X locations of the year titles.
-    'bis 1h': 100,
-    '1h bis 2h': 250,
-    '2h bis 3h': 400,
+    'bis 1h': 80,
+    '1h bis 2h': 220,
+    '2h bis 3h': 350,
     '3h bis 4h': 550,
     '4h bis 5h': 750,
     'mehr als 5h': 900
@@ -184,7 +184,7 @@ var agecatCenters = { // Center locations of the bubbles.
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
     .exponent(0.5)
-    .range([3, 75]);
+    .range([5, 100]);
 
 /* This data manipulation function takes the raw data from the CSV file and converts it into an array of node objects. Each node will store data and visualization values to visualize a bubble. rawData is expected to be an array of data objects, read in from one of d3's loading functions like d3.csv. This function returns the new node array, with a node in that array for each element in the rawData input. */
     
@@ -207,8 +207,8 @@ var agecatCenters = { // Center locations of the bubbles.
       return {
           
         id: d.id,
-        radius: radiusScale(+d.bildschirmzeit), // Berechnung Radius für bubbles
-        size: d.bildschirmzeit,
+        radius: radiusScale(+d.screenkat), // Berechnung Radius für bubbles
+        size: d.screenkat,
         screentime: d.bildschirmzeit,
         age: d.alter,
         agecat: d.alterkat,
@@ -232,7 +232,7 @@ var agecatCenters = { // Center locations of the bubbles.
     
 /* Use the max duration in the data as the max in the scale's domain. note we have to ensure the duration is a number by converting it with `+`. */
 
-    var maxAmount = d3.max(rawData, function (d) { return +d.bildschirmzeit; });
+    var maxAmount = d3.max(rawData, function (d) { return +d.screenkat; });
     radiusScale.domain([0, maxAmount*50]);
 
     nodes = createNodes(rawData);
