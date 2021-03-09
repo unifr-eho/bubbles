@@ -93,8 +93,8 @@ var agecatCenters = { // Center locations of the bubbles.
 
   var agecatTitleX = { // X locations of the year titles.
     'Bis 15': 100,
-    '15-20': 340,
-    '20-30': 620,
+    '15 bis 20': 340,
+    '20 bis 30': 620,
     'Älter als 30': 870
   };
     
@@ -102,28 +102,52 @@ var agecatCenters = { // Center locations of the bubbles.
 // Zweiter Button: Geschlecht
     
   var sexCenters = { // Center locations of the bubbles. 
-    '1': { x: 380, y: 340 },
-    '2': { x: 630, y: 295 }
+    1: { x: 250, y: height / 2  },
+    2: { x: 400, y: height / 2  },
+    3: { x: 550, y: height / 2  },
+    4: { x: 700, y: height / 2  }
   };
 
   var sexTitleX = {  // X locations of the year titles.
-    'Männer': 300,
-    'Frauen': 700
+    'Männer': 150,
+    'Frauen': 450,
+    'Nichtbinär': 650,
+    'Keine Antwort': 850
   };
 
 
-// Dritter Button: Games
+// Dritter Button: Bildschirmzeit
+    
+  var screentimeCenters = { // Center locations of the bubbles. 
+    1: { x: 250, y: height / 2 },
+    2: { x: 350, y: height / 2 },
+    3: { x: 450, y: height / 2 },
+    4: { x: 550, y: height / 2 },
+    5: { x: 650, y: height / 2 },
+    6: { x: 750, y: height / 2 } 
+  };
+
+  var screentimeTitleX = {  // X locations of the year titles.
+    'bis 1h': 100,
+    '1h bis 2h': 250,
+    '2h bis 3h': 400,
+    '3h bis 4h': 550,
+    '4h bis 5h': 750,
+    'mehr als 5h': 900
+  };
+    
+// Vierter Button: Games
     
   var gameCenters = { // Center locations of the bubbles. 
-    '1': { x: 250, y: height / 2 },
-    '2': { x: 400, y: height / 2 },
-    '3': { x: 600, y: height / 2 },
-    '4': { x: 750, y: height / 2 }
+    'Call of Duty': { x: 250, y: height / 2 },
+    'League of Legends': { x: 400, y: height / 2 },
+    'Clash of Clans': { x: 600, y: height / 2 },
+    'Fifa': { x: 750, y: height / 2 }
   };
 
   var gameTitleX = {  // X locations of the year titles.
-    'CoD': 100,
-    'LoL': 340,
+    'Call of Duty': 100,
+    'League of Legends': 340,
     'Clash of Clans': 620,
     'Fifa': 870
   };
@@ -160,7 +184,7 @@ var agecatCenters = { // Center locations of the bubbles.
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
     .exponent(0.5)
-    .range([2, 75]);
+    .range([3, 75]);
 
 /* This data manipulation function takes the raw data from the CSV file and converts it into an array of node objects. Each node will store data and visualization values to visualize a bubble. rawData is expected to be an array of data objects, read in from one of d3's loading functions like d3.csv. This function returns the new node array, with a node in that array for each element in the rawData input. */
     
@@ -185,6 +209,7 @@ var agecatCenters = { // Center locations of the bubbles.
         id: d.id,
         radius: radiusScale(+d.bildschirmzeit), // Berechnung Radius für bubbles
         size: d.bildschirmzeit,
+        screentime: d.bildschirmzeit,
         age: d.alter,
         agecat: d.alterkat,
         sex: d.geschlecht,
@@ -283,8 +308,9 @@ var agecatCenters = { // Center locations of the bubbles.
   function groupBubbles() {
     hideAgecat();
     hideSex();
+    hideScreentime();
     hideGame();  
-
+    
     force.on('tick', function (e) {
       bubbles.each(moveToCenter(e.alpha))
         .attr('cx', function (d) { return d.x; })
@@ -324,6 +350,7 @@ Die Positionierung basiert auf dem alpha Parameter des force layouts und wird kl
     showAgecat();
     hideSex();
     hideGame();
+    hideScreentime();
 
     force.on('tick', function (e) {
       bubbles.each(moveToAgecat(e.alpha))
@@ -370,6 +397,7 @@ function moveToAgecat(alpha) {
     showSex();
     hideAgecat();
     hideGame();
+    hideScreentime();
 
     force.on('tick', function (e) {
       bubbles.each(moveToSex(e.alpha))
@@ -408,6 +436,54 @@ function moveToAgecat(alpha) {
 
 //* ------------------------------------------------------------------
 //
+// SCREENTIME / BILDSCHIRMZEIT
+//
+// -----------------------------------------------------------------*/
+    
+  function splitBubblesintoScreentime() {
+    showScreentime();
+    hideSex();
+    hideAgecat();
+    hideGame();
+
+    force.on('tick', function (e) {
+      bubbles.each(moveToScreentime(e.alpha))
+        .attr('cx', function (d) { return d.x; })
+        .attr('cy', function (d) { return d.y; });
+    });
+
+    force.start();
+  }
+
+  function moveToScreentime(alpha) {
+    return function (d) {
+      var target = screentimeCenters[d.screentime];
+      d.x = d.x + (target.x - d.x) * damper * alpha * 1.1;
+      d.y = d.y + (target.y - d.y) * damper * alpha * 1.1;
+    };
+  }
+
+  function hideScreentime() {
+    svg.selectAll('.screentime').remove();
+  }
+
+  function showScreentime() {
+
+    var screentimeData = d3.keys(screentimeTitleX);
+    var screentime = svg.selectAll('.screentime')
+      .data(screentimeData);
+
+    screentime.enter().append('text')
+      .attr('class', 'screentime')
+      .attr('x', function (d) { return screentimeTitleX[d]; })
+      .attr('y', 65)
+      .attr('text-anchor', 'middle')
+      .text(function (d) { return d; });
+    }    
+
+    
+//* ------------------------------------------------------------------
+//
 // GAME / VIDEOSPIEL
 //
 // -----------------------------------------------------------------*/
@@ -416,6 +492,7 @@ function moveToAgecat(alpha) {
     showGame();
     hideSex();
     hideAgecat();
+    hideScreentime();
 
     force.on('tick', function (e) {
       bubbles.each(moveToGame(e.alpha))
@@ -476,6 +553,8 @@ function moveToAgecat(alpha) {
       splitBubblesintoSex();
     } else if (displayName === 'game') {
       splitBubblesintoGame();
+    } else if (displayName === 'screentime') {
+      splitBubblesintoScreentime();
     } else {
       groupBubbles();
     }
@@ -505,8 +584,9 @@ function moveToAgecat(alpha) {
   var tooltip2 = floatingtooltip2('gates_tooltip2', 240);
 
   var fillColor = d3.scale.ordinal()
-    .domain([1, 2, 3, 4])
+    .domain(['Call of Duty','League of Legends','Clash of Clans', 'Fifa'])
     .range(['#03A9F4', '#FF5722', '#4CAF50', '#FFEB3B']);
+
 
   /* Tooltip-Funktion*/
   function showDetail(d) {
@@ -518,6 +598,9 @@ function moveToAgecat(alpha) {
                   '</span><br/>' +
                   '<span class="name">Geschlecht: </span><span class="value">' +
                   d.sex +
+                  '</span><br/>' +
+                  '<span class="name">Bildschirmzeit: </span><span class="value">' +
+                  d.screentime +
                   '</span><br/>' +
                   '<span class="name">Lieblingsgame: </span><span class="value">' +
                   d.game +
@@ -532,7 +615,7 @@ function moveToAgecat(alpha) {
 //
 // WISSENSCHAFTSWOCHE I
 //
-// Farben anpassen: hier Variable definiere, weiter oben (ca. zeil 500) die Farben konkret anpassen. 
+// Farben anpassen: hier Variable definiere, weiter oben (ca. Zeile 500) die Farben konkret anpassen. 
 //
 // -----------------------------------------------------------------*/    
       
