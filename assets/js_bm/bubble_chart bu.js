@@ -6,7 +6,7 @@
 //
 // -----------------------------------------------------------------*/    
 
-d3.csv('assets/data/data.csv', display); // Daten laden
+d3.csv('assets/data/data3.csv', display); // Daten laden
 setupButtons(); // Button Setup
 
 //* ------------------------------------------------------------------
@@ -85,21 +85,21 @@ function bubbleChart() {
 // Erster Button: agecat (Alterskategorie)   
  
 var agecatCenters = { // Center locations of the bubbles.
-    1: { x: 150, y: height / 2 },
-    2: { x: 300, y: height / 2 },
+    1: { x: 200, y: height / 2 },
+    2: { x: 380, y: height / 2 },
     3: { x: 470, y: height / 2 },
-    4: { x: 600, y: height / 2 },
-    5: { x: 750, y: height / 2 },
-    6: { x: 900, y: height / 2 }
+    4: { x: 550, y: height / 2 },
+    5: { x: 700, y: height / 2 },
+    6: { x: 880, y: height / 2 }
   };
 
   var agecatTitleX = { // X locations of the year titles.
     'Bis 14 Jahre': 100,
-    '14-15': 250,
-    '16-17': 450,
-    '18-19': 650,
-    '20-29': 800,
-    'Älter als 30 Jahre': 950
+    '14-15': 200,
+    '16-17': 340,
+    '18-19': 620,
+    '20-29': 670,
+    'Älter als 30 Jahre': 870
   };
     
     
@@ -140,34 +140,21 @@ var agecatCenters = { // Center locations of the bubbles.
     'mehr als 5h': 900
   };
     
-// Vierter Button: Sorgenbarometer
+// Vierter Button: Games
     
-    
-  var concernCenters = { // Center locations of the bubbles. 
-    '1': { x: 220, y: height / 2  },
-    '2': { x: 420, y: height / 2  },
-    '3': { x: 600, y: height / 2  },
-    '4': { x: 800, y: height / 2  }
-  
+  var gameCenters = { // Center locations of the bubbles. 
+    'Call of Duty': { x: 250, y: height / 2 },
+    'League of Legends': { x: 400, y: height / 2 },
+    'Clash of Clans': { x: 600, y: height / 2 },
+    'Fifa': { x: 750, y: height / 2 }
   };
 
-  var concernTitleX = {  // X locations of the year titles.
-    '"Ich mache mir Sorgen um meine Daten."': 500,
-    'Stimmt ganz': 150,
-    'Stimmt eher': 350, 
-    'Stimmt eher nicht': 600, 
-    'Stimmt nicht': 850
+  var gameTitleX = {  // X locations of the year titles.
+    'Call of Duty': 100,
+    'League of Legends': 340,
+    'Clash of Clans': 620,
+    'Fifa': 870
   };
-    
-  var concernTitleY = {  // Y locations of the year titles.
-    '"Ich mache mir Sorgen um meine Daten."': 35, 
-    'Stimmt ganz': 70,
-    'Stimmt eher': 70, 
-    'Stimmt eher nicht': 70, 
-    'Stimmt nicht': 70
-  };  
-    
-    
     
 //* ------------------------------------------------------------------
 //
@@ -232,9 +219,7 @@ var agecatCenters = { // Center locations of the bubbles.
         agecat: d.kategoriealter,
           
         sex: d.geschlecht,
-          
-        concern: d.sorgenkat,  
-        concerntext: d.sorgen,
+        game: d.game,  
           
         x: Math.random() * 900,
         y: Math.random() * 800
@@ -284,7 +269,7 @@ var agecatCenters = { // Center locations of the bubbles.
 // WISSENSCHAFTSWOCHE C
 //
 // Hier wird definiert, welche Variable die Farbe der Bubbles definiert.
-// Aktuell: "agecat". Jede Alters-Kategorie wird also anders eingefärbt. 
+// Aktuell: "game". Jede Game-Kategoerie wird also anders eingefärbt. 
 //
 // -----------------------------------------------------------------*/      
 
@@ -330,7 +315,7 @@ var agecatCenters = { // Center locations of the bubbles.
     hideAgecat();
     hideSex();
     hideScreentime();
-    hideConcern();  
+    hideGame();  
     
     force.on('tick', function (e) {
       bubbles.each(moveToCenter(e.alpha))
@@ -370,7 +355,7 @@ Die Positionierung basiert auf dem alpha Parameter des force layouts und wird kl
  function splitBubblesintoAgecat() {
     showAgecat();
     hideSex();
-    hideConcern();
+    hideGame();
     hideScreentime();
 
     force.on('tick', function (e) {
@@ -417,7 +402,7 @@ function moveToAgecat(alpha) {
   function splitBubblesintoSex() {
     showSex();
     hideAgecat();
-    hideConcern();
+    hideGame();
     hideScreentime();
 
     force.on('tick', function (e) {
@@ -465,7 +450,7 @@ function moveToAgecat(alpha) {
     showScreentime();
     hideSex();
     hideAgecat();
-    hideConcern();
+    hideGame();
 
     force.on('tick', function (e) {
       bubbles.each(moveToScreentime(e.alpha))
@@ -505,18 +490,18 @@ function moveToAgecat(alpha) {
     
 //* ------------------------------------------------------------------
 //
-// Sorgen
+// GAME / VIDEOSPIEL
 //
 // -----------------------------------------------------------------*/
     
-  function splitBubblesintoConcern() {
-    showConcern();
+  function splitBubblesintoGame() {
+    showGame();
     hideSex();
     hideAgecat();
     hideScreentime();
 
     force.on('tick', function (e) {
-      bubbles.each(moveToConcern(e.alpha))
+      bubbles.each(moveToGame(e.alpha))
         .attr('cx', function (d) { return d.x; })
         .attr('cy', function (d) { return d.y; });
     });
@@ -524,28 +509,28 @@ function moveToAgecat(alpha) {
     force.start();
   }
 
-  function moveToConcern(alpha) {
+  function moveToGame(alpha) {
     return function (d) {
-      var target = concernCenters[d.concern];
+      var target = gameCenters[d.game];
       d.x = d.x + (target.x - d.x) * damper * alpha * 1.1;
       d.y = d.y + (target.y - d.y) * damper * alpha * 1.1;
     };
   }
 
-  function hideConcern() {
-    svg.selectAll('.concern').remove();
+  function hideGame() {
+    svg.selectAll('.game').remove();
   }
 
-  function showConcern() {
+  function showGame() {
 
-    var concernData = d3.keys(concernTitleX);
-    var concern = svg.selectAll('.concern')
-      .data(concernData);
+    var gameData = d3.keys(gameTitleX);
+    var game = svg.selectAll('.game')
+      .data(gameData);
 
-    concern.enter().append('text')
-      .attr('class', 'concern')
-      .attr('x', function (d) { return concernTitleX[d]; })
-      .attr('y', function (d) { return concernTitleY[d]; })
+    game.enter().append('text')
+      .attr('class', 'game')
+      .attr('x', function (d) { return gameTitleX[d]; })
+      .attr('y', 65)
       .attr('text-anchor', 'middle')
       .text(function (d) { return d; });
     }
@@ -572,8 +557,8 @@ function moveToAgecat(alpha) {
       splitBubblesintoAgecat();
     } else if (displayName === 'sex') {
       splitBubblesintoSex();
-    } else if (displayName === 'concern') {
-      splitBubblesintoConcern();
+    } else if (displayName === 'game') {
+      splitBubblesintoGame();
     } else if (displayName === 'screentime') {
       splitBubblesintoScreentime();
     } else {
@@ -614,7 +599,7 @@ function moveToAgecat(alpha) {
     d3.select(this).attr('stroke', 'black');
 
     var content = '<span class="name">Alter: </span><span class="value">' +
-                  d.age +
+                  d.agecat +
                   '</span><br/>' +
                   '<span class="name">Geschlecht: </span><span class="value">' +
                   d.sex +
@@ -622,8 +607,8 @@ function moveToAgecat(alpha) {
                   '<span class="name">Bildschirmzeit: </span><span class="value">' +
                   d.screentime +
                   '</span><br/>' +
-                  '<span class="name">"Ich mache mir Sorgen um meine Daten": </span><span class="value">' +
-                  d.concerntext +
+                  '<span class="name">Lieblingsgame: </span><span class="value">' +
+                  d.game +
                   '</span>';
     tooltip2.showtooltip2(content, d3.event);
   }

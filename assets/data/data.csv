@@ -1,300 +1,58 @@
-id,klasse,schuhgroesse,alter,geschlecht,monat,vegi,agecat
-1,Zehn,38,16,2,4,1,very low
-2,Zehn,39,14,2,9,1,very low
-3,Zehn,38,14,2,11,1,very low
-4,Zehn,40,14,2,11,1,very low
-5,Zehn,41,15,2,5,1,very low
-6,Zehn,37,14,1,3,1,very low
-7,Zehn,39,17,1,3,2,low
-8,Zehn,37,15,2,3,1,very low
-9,Zehn,40,16,2,4,1,very low
-10,Zehn,43,15,2,1,1,very low
-11,Zehn,38,16,2,10,1,very low
-12,Zehn,39,18,1,3,1,low
-13,Zehn,43,13,2,12,1,very low
-14,Zehn,41,17,2,8,2,low
-15,Zehn,37,17,1,11,1,very low
-16,Zehn,36,13,1,3,1,very low
-17,Zehn,39,16,2,9,1,very low
-18,Zehn,38,18,1,2,1,low
-19,Zehn,44,16,2,1,2,very low
-20,Quarta,44,15,1,9,1,very low
-21,Quarta,40,17,1,4,2,low
-22,Quarta,39,18,2,3,1,low
-23,Quarta,39,16,1,3,2,very low
-24,Quarta,38,15,1,6,2,very low
-25,Quarta,41,18,2,2,1,low
-26,Quarta,38,19,2,3,1,low
-27,Quarta,37,18,2,2,1,low
-28,Quarta,42,20,2,11,1,medium
-29,Quarta,42,16,2,5,1,very low
-30,Quarta,42,15,2,6,1,very low
-31,Quarta,42,20,1,9,1,low
-32,Quarta,39,15,1,3,1,very low
-33,Quarta,40,16,2,8,1,very low
-34,Quarta,36,17,2,5,1,low
-35,Quarta,37,19,2,2,1,low
-36,Quarta,38,19,2,8,1,low
-37,Quarta,36,15,1,8,1,very low
-38,Quarta,43,15,2,3,1,very low
-39,Quarta,42,17,2,11,1,very low
-40,Quarta,36,16,2,7,3,very low
-41,Quarta,41,20,1,4,3,low
-42,Quarta,40,17,1,4,1,very low
-43,Quarta,41,17,1,3,1,low
-44,Quarta,37,21,1,9,1,medium
-45,Quarta,37,19,2,7,1,low
-46,Quarta,37,20,1,2,1,low
-47,Quarta,43,16,1,3,1,very low
-48,Quarta,43,16,2,5,1,very low
-49,Quarta,38,19,2,2,1,low
-50,Quarta,43,20,1,3,3,medium
-51,Quarta,38,18,2,9,1,low
-52,Quarta,39,15,1,5,1,very low
-53,Quarta,42,17,2,2,1,very low
-54,Quarta,40,16,1,6,1,very low
-55,Quarta,44,19,1,3,1,low
-56,Quarta,42,19,1,8,1,low
-57,Quarta,41,14,2,3,2,very low
-58,Quarta,40,18,2,7,1,low
-59,Quarta,39,15,1,1,2,very low
-60,Quarta,42,16,2,4,1,very low
-61,Quarta,39,17,2,12,1,very low
-62,Tertia,40,21,2,6,1,medium
-63,Tertia,43,16,1,7,1,very low
-64,Tertia,44,14,2,2,1,very low
-65,Tertia,37,17,1,11,1,low
-66,Tertia,42,19,2,7,2,low
-67,Tertia,36,15,1,7,2,very low
-68,Tertia,43,20,2,4,2,medium
-69,Tertia,43,16,2,12,1,very low
-70,Tertia,39,20,2,8,1,medium
-71,Tertia,42,20,2,7,1,low
-72,Tertia,43,15,2,5,1,very low
-73,Tertia,44,17,1,7,1,very low
-74,Tertia,43,21,2,2,1,medium
-75,Tertia,39,18,2,5,1,low
-76,Tertia,40,15,2,11,1,very low
-77,Tertia,44,20,2,5,1,low
-78,Tertia,37,16,1,6,1,very low
-79,Tertia,45,18,1,2,1,low
-80,Tertia,35,14,1,2,2,very low
-81,Tertia,42,15,1,8,2,very low
-82,Tertia,42,17,1,7,1,low
-83,Tertia,44,15,1,4,2,very low
-84,Tertia,40,19,1,2,1,low
-85,Tertia,38,15,2,3,1,very low
-86,Tertia,38,14,2,7,1,very low
-87,Tertia,41,21,1,5,1,medium
-88,Tertia,38,18,1,5,1,low
-89,Tertia,46,18,2,7,1,low
-90,Tertia,36,18,1,4,2,low
-91,Tertia,39,18,2,10,1,low
-92,Tertia,38,17,2,5,1,low
-93,Tertia,38,17,2,5,1,low
-94,Tertia,41,16,2,7,2,very low
-95,Tertia,38,19,1,2,1,low
-96,Tertia,36,20,1,4,2,medium
-97,Tertia,44,14,2,2,1,very low
-98,Tertia,40,15,2,6,1,very low
-99,Tertia,37,16,1,5,1,very low
-100,Tertia,42,15,1,4,2,very low
-101,Tertia,44,15,1,8,1,very low
-102,Tertia,37,20,2,8,1,low
-103,Tertia,38,18,2,7,1,low
-104,Tertia,39,19,2,7,1,low
-105,Tertia,42,21,2,4,2,medium
-106,Tertia,44,18,1,2,1,low
-107,Tertia,40,18,2,4,2,low
-108,Tertia,41,15,2,6,1,very low
-109,Tertia,43,18,1,9,1,low
-110,Tertia,42,15,2,8,1,very low
-111,Tertia,40,19,1,7,2,low
-112,Tertia,41,18,1,4,1,low
-113,Tertia,39,15,1,10,1,very low
-114,Tertia,36,20,2,9,1,medium
-115,Tertia,37,14,1,6,1,very low
-116,Tertia,42,17,2,10,1,very low
-117,Tertia,43,16,1,5,2,very low
-118,Tertia,41,14,1,2,1,very low
-119,Tertia,40,15,2,7,1,very low
-120,Tertia,45,15,2,3,3,very low
-121,Tertia,43,18,1,9,1,low
-122,Tertia,37,18,1,12,1,low
-123,Tertia,42,20,2,10,1,medium
-124,Tertia,42,18,1,5,1,low
-125,Sekunda,38,18,2,7,2,low
-126,Sekunda,40,20,1,5,1,medium
-127,Sekunda,42,17,2,6,1,very low
-128,Sekunda,36,17,2,4,1,low
-129,Sekunda,43,17,1,7,1,very low
-130,Sekunda,41,20,2,11,2,low
-131,Sekunda,40,21,1,5,2,medium
-132,Sekunda,39,21,1,7,1,medium
-133,Sekunda,37,19,1,5,1,low
-134,Sekunda,38,16,1,2,1,very low
-135,Sekunda,38,17,1,12,2,very low
-136,Sekunda,38,16,1,9,2,very low
-137,Sekunda,36,20,1,5,2,low
-138,Sekunda,41,17,2,7,1,very low
-139,Sekunda,40,17,2,11,2,very low
-140,Sekunda,40,17,1,7,1,low
-141,Sekunda,38,21,2,2,1,medium
-142,Sekunda,39,20,1,3,1,medium
-143,Sekunda,36,17,1,3,1,low
-144,Sekunda,42,20,1,1,1,low
-145,Sekunda,40,19,1,5,1,low
-146,Sekunda,41,16,2,3,1,very low
-147,Sekunda,39,18,2,11,1,low
-148,Sekunda,43,17,2,7,1,very low
-149,Sekunda,37,18,2,10,1,low
-150,Sekunda,36,16,2,5,3,very low
-151,Sekunda,42,20,2,3,1,low
-152,Sekunda,37,17,1,7,1,very low
-153,Sekunda,39,16,1,8,1,very low
-154,Sekunda,44,18,2,7,1,low
-155,Sekunda,39,17,2,9,1,low
-156,Sekunda,37,18,2,8,1,low
-157,Sekunda,43,18,2,12,1,low
-158,Sekunda,35,18,1,11,1,low
-159,Sekunda,39,16,2,4,1,very low
-160,Sekunda,43,20,1,12,1,medium
-161,Sekunda,36,21,2,3,1,medium
-162,Sekunda,41,21,2,2,1,medium
-163,Sekunda,36,17,1,5,1,very low
-164,Sekunda,37,19,1,6,2,low
-165,Sekunda,40,17,1,5,2,low
-166,Sekunda,45,20,2,2,1,medium
-167,Sekunda,43,20,1,4,2,low
-168,Sekunda,42,18,1,8,2,low
-169,Sekunda,43,18,2,10,1,low
-170,Sekunda,38,18,1,5,1,low
-171,Sekunda,36,19,1,8,1,low
-172,Sekunda,41,16,2,2,1,very low
-173,Sekunda,37,18,1,10,2,low
-174,Sekunda,43,19,2,4,1,low
-175,Sekunda,41,18,1,8,1,low
-176,Sekunda,39,17,2,4,1,low
-177,Sekunda,39,17,2,11,1,low
-178,Sekunda,41,20,2,7,1,medium
-179,Sekunda,37,16,2,4,3,very low
-180,Sekunda,41,18,1,8,2,low
-181,Sekunda,41,16,1,4,1,very low
-182,Sekunda,42,16,2,6,1,very low
-183,Sekunda,44,18,1,9,1,low
-184,Sekunda,41,19,1,6,1,low
-185,Sekunda,45,17,2,4,2,very low
-186,Sekunda,41,19,1,11,1,low
-187,Sekunda,43,16,1,12,2,very low
-188,Sekunda,40,18,2,8,1,low
-189,Sekunda,44,16,1,3,1,very low
-190,Sekunda,39,16,2,4,1,very low
-191,Sekunda,39,19,1,10,1,low
-192,Sekunda,38,18,1,4,1,low
-193,Sekunda,42,17,1,4,1,low
-194,Sekunda,43,19,2,5,3,low
-195,Sekunda,41,20,1,5,1,medium
-196,Sekunda,37,19,1,9,1,low
-197,Sekunda,40,20,2,5,1,low
-198,Sekunda,43,17,1,3,1,very low
-199,Prima,41,22,1,6,1,medium
-200,Prima,39,22,2,8,1,medium
-201,Prima,43,22,2,7,1,medium
-202,Prima,40,19,1,12,1,low
-203,Prima,41,19,2,5,1,low
-204,Prima,44,17,1,6,1,low
-205,Prima,36,18,1,1,1,low
-206,Prima,42,19,1,3,1,low
-207,Prima,38,20,2,8,1,low
-208,Prima,40,21,2,4,1,medium
-209,Prima,42,22,1,3,2,medium
-210,Prima,44,20,2,9,1,medium
-211,Prima,39,18,2,6,1,low
-212,Prima,40,21,2,6,1,medium
-213,Prima,40,21,2,2,1,medium
-214,Prima,42,19,1,10,1,low
-215,Prima,37,17,2,11,1,low
-216,Prima,42,17,2,4,1,low
-217,Prima,42,20,1,3,1,low
-218,Prima,42,17,2,2,1,low
-219,Prima,43,17,2,12,3,low
-220,Prima,40,21,2,7,1,medium
-221,Prima,39,21,1,10,1,medium
-222,Prima,37,18,2,7,2,low
-223,Prima,43,20,2,9,1,low
-224,Prima,38,21,2,10,2,medium
-225,Prima,36,19,1,9,2,low
-226,Prima,43,21,1,1,1,medium
-227,Prima,43,18,1,12,1,low
-228,Prima,41,17,1,10,1,low
-229,Prima,40,21,2,8,2,medium
-230,Prima,41,21,1,5,1,medium
-231,Prima,40,18,2,10,1,low
-232,Prima,39,20,2,12,1,medium
-233,Prima,42,19,1,11,1,low
-234,Prima,43,21,1,9,1,medium
-235,Prima,42,20,2,8,1,medium
-236,Prima,37,17,1,7,2,low
-237,Prima,39,21,1,10,1,medium
-238,Prima,36,19,2,4,1,low
-239,Prima,35,19,1,9,2,low
-240,Prima,43,19,2,9,1,low
-241,Prima,41,18,2,7,1,low
-242,Prima,41,20,2,9,1,low
-243,Prima,40,18,2,4,1,low
-244,Prima,40,19,1,5,1,low
-245,Prima,36,19,1,6,2,low
-246,Prima,37,20,2,11,1,medium
-247,Prima,38,22,1,3,1,medium
-248,Prima,40,19,1,5,1,low
-249,Prima,40,18,2,8,1,low
-250,Prima,42,18,1,5,3,low
-251,Prima,45,19,1,7,1,low
-252,Prima,43,20,2,11,1,low
-253,Prima,42,21,2,1,1,medium
-254,Prima,37,17,2,2,2,low
-255,Prima,41,19,2,2,1,low
-256,Prima,37,22,2,2,1,medium
-257,Prima,41,22,2,11,1,medium
-258,Prima,38,21,2,11,2,medium
-259,Prima,37,19,2,10,1,low
-260,Lehrer,46,36,2,11,1,high
-261,Lehrer,39,39,2,4,1,high
-262,Lehrer,38,52,2,7,1,high
-263,Lehrer,38,50,2,12,1,high
-264,Lehrer,39,60,2,11,1,high
-265,Lehrer,41,39,1,10,1,high
-266,Lehrer,40,38,1,7,1,high
-267,Lehrer,37,49,2,3,1,high
-268,Lehrer,37,44,2,7,2,high
-269,Lehrer,40,33,1,10,1,high
-270,Lehrer,43,38,1,4,1,high
-271,Lehrer,40,60,1,4,1,high
-272,Lehrer,42,37,1,10,1,high
-273,Lehrer,40,46,2,12,1,high
-274,Lehrer,39,34,2,11,2,high
-275,Lehrer,37,48,2,9,2,high
-276,Lehrer,37,33,2,3,1,high
-277,Lehrer,37,46,1,7,1,high
-278,Lehrer,41,44,1,4,2,high
-279,Lehrer,38,31,1,8,1,high
-280,Lehrer,43,60,2,12,1,high
-281,Lehrer,36,48,2,6,1,high
-282,Lehrer,40,61,1,10,1,high
-283,Lehrer,40,57,1,2,1,high
-284,Lehrer,44,29,2,11,1,high
-285,Lehrer,39,55,1,8,1,high
-286,Lehrer,36,59,2,3,2,high
-287,Lehrer,39,54,1,2,1,high
-288,Lehrer,43,63,2,6,1,high
-289,Lehrer,38,53,1,8,1,high
-290,Lehrer,42,41,2,1,1,high
-291,Lehrer,40,44,1,10,1,high
-292,Lehrer,43,39,1,1,1,high
-293,Lehrer,39,53,2,5,1,high
-294,Lehrer,39,61,1,9,1,high
-295,Lehrer,41,40,2,12,1,high
-296,Lehrer,40,61,1,3,1,high
-297,Lehrer,42,38,1,3,1,high
-298,Lehrer,42,31,2,10,1,high
-299,Lehrer,39,46,2,1,1,high
+﻿id,alter,kategoriealter,geschlecht,bsz,bszkat,bszkat2,game,nachttisch,nachttischkat,tagohne,tagohnekat,sorgen,sorgenkat
+4,30,6,Maennlich,2h-3h,3,9,Call of Duty,Ja,1,Stimmt,1,Stimmt ganz,1
+5,15,2,Maennlich,4h-5h,5,25,Fifa,Nein,4,Stimmt eher ,2,Stimmt gar nicht,4
+6,14,2,Maennlich,4h-5h,5,25,League of Legends,Ja,1,Stimmt nicht,4,Stimmt eher,2
+7,15,2,Maennlich,4h-5h,5,25,Clash of Clans,Ja,1,Stimmt eher ,2,Stimmt eher,2
+8,32,6,Maennlich,1h-2h,2,4,Clash of Clans,Ja,1,Stimmt eher nicht,3,Stimmt ganz,1
+9,16,3,Weiblich,2h-3h,3,9,League of Legends,Nein,4,Stimmt,1,Stimmt eher,2
+10,16,3,Maennlich,3h-4h,4,16,Clash of Clans,Ja,1,Stimmt eher ,2,Stimmt eher nicht,3
+11,16,3,Maennlich,4h-5h,5,25,Call of Duty,eher Nein,3,Stimmt,1,Stimmt eher,2
+12,18,4,Maennlich,2h-3h,3,9,Call of Duty,eher Nein,3,Stimmt,1,Stimmt eher nicht,3
+13,18,4,Maennlich,Mehr als 5h,6,36,Fifa,Ja,1,Stimmt,1,Stimmt eher nicht,3
+14,18,4,Maennlich,3h-4h,4,16,Clash of Clans,eher Ja,2,Stimmt,1,Stimmt eher nicht,3
+15,16,3,Weiblich,4h-5h,5,25,Clash of Clans,eher Ja,2,Stimmt eher nicht,3,Stimmt eher nicht,3
+16,21,5,Maennlich,3h-4h,4,16,Fifa,eher Ja,2,Stimmt,1,Stimmt eher nicht,3
+17,17,3,Maennlich,Mehr als 5h,6,36,Fifa,Ja,1,Stimmt eher nicht,3,Stimmt eher nicht,3
+18,20,5,Weiblich,1h-2h,2,4,Clash of Clans,eher Ja,2,Stimmt,1,Stimmt eher,2
+19,16,3,Weiblich,2h-3h,3,9,Fifa,eher Nein,3,Stimmt,1,Stimmt eher nicht,3
+20,17,3,Maennlich,Mehr als 5h,6,36,Fifa,eher Ja,2,Stimmt,1,Stimmt eher,2
+21,16,3,Maennlich,2h-3h,3,9,League of Legends,eher Nein,3,Stimmt,1,Stimmt eher nicht,3
+22,19,4,Weiblich,4h-5h,5,25,Clash of Clans,eher Ja,2,Stimmt,1,Stimmt eher,2
+23,16,3,Weiblich,2h-3h,3,9,Fifa,Ja,1,Stimmt,1,Stimmt eher,2
+24,18,4,Weiblich,3h-4h,4,16,Call of Duty,Nein,4,Stimmt nicht,4,Stimmt eher,2
+25,20,5,Weiblich,3h-4h,4,16,League of Legends,Ja,1,Stimmt,1,Stimmt eher,2
+26,17,3,Weiblich,1h-2h,2,4,Fifa,Nein,4,Stimmt,1,Stimmt eher,2
+27,42,6,Maennlich,weniger als 1h,1,1,Clash of Clans,eher Nein,3,Stimmt eher ,2,Stimmt eher,2
+28,18,4,Maennlich,2h-3h,3,9,Call of Duty,Ja,1,Stimmt nicht,4,Stimmt gar nicht,4
+29,16,3,Maennlich,2h-3h,3,9,Clash of Clans,Nein,4,Stimmt,1,Stimmt eher nicht,3
+30,17,3,Weiblich,2h-3h,3,9,League of Legends,Ja,1,Stimmt,1,Stimmt eher,2
+31,18,4,Maennlich,2h-3h,3,9,League of Legends,eher Ja,2,Stimmt eher ,2,Stimmt eher nicht,3
+32,16,3,Maennlich,Mehr als 5h,6,36,Fifa,eher Ja,2,Stimmt eher ,2,Stimmt eher nicht,3
+33,16,3,Weiblich,3h-4h,4,16,League of Legends,Ja,1,Stimmt eher nicht,3,Stimmt eher nicht,3
+34,17,3,Weiblich,Mehr als 5h,6,36,Call of Duty,Ja,1,Stimmt eher ,2,Stimmt eher nicht,3
+35,17,3,Weiblich,1h-2h,2,4,Clash of Clans,eher Nein,3,Stimmt,1,Stimmt eher,2
+36,16,3,Weiblich,3h-4h,4,16,Clash of Clans,Ja,1,Stimmt eher nicht,3,Stimmt eher,2
+37,17,3,Maennlich,2h-3h,3,9,Clash of Clans,eher Ja,2,Stimmt eher nicht,3,Stimmt eher nicht,3
+38,16,3,Maennlich,4h-5h,5,25,Fifa,Ja,1,Stimmt eher ,2,Stimmt eher nicht,3
+39,16,3,Maennlich,3h-4h,4,16,League of Legends,Ja,1,Stimmt,1,Stimmt gar nicht,4
+40,15,2,Maennlich,1h-2h,2,4,Clash of Clans,eher Ja,2,Stimmt eher ,2,Stimmt eher nicht,3
+41,16,3,Weiblich,2h-3h,3,9,Call of Duty,Nein,4,Stimmt eher nicht,3,Stimmt eher nicht,3
+42,17,3,Maennlich,3h-4h,4,16,Clash of Clans,eher Ja,2,Stimmt,1,Stimmt ganz,1
+43,19,4,Maennlich,3h-4h,4,16,Fifa,Ja,1,Stimmt eher nicht,3,Stimmt gar nicht,4
+44,16,3,Weiblich,3h-4h,4,16,Clash of Clans,Nein,4,Stimmt nicht,4,Stimmt eher nicht,3
+45,16,3,Maennlich,2h-3h,3,9,League of Legends,eher Ja,2,Stimmt eher ,2,Stimmt eher,2
+46,16,3,Weiblich,Mehr als 5h,6,36,Fifa,Ja,1,Stimmt nicht,4,Stimmt eher nicht,3
+47,17,3,Weiblich,Mehr als 5h,6,36,League of Legends,eher Ja,2,Stimmt,1,Stimmt eher,2
+48,17,3,Maennlich,4h-5h,5,25,Clash of Clans,Ja,1,Stimmt eher ,2,Stimmt eher nicht,3
+49,15,2,Maennlich,4h-5h,5,25,League of Legends,eher Ja,2,Stimmt,1,Stimmt eher,2
+50,16,3,Weiblich,Mehr als 5h,6,36,League of Legends,eher Nein,3,Stimmt eher ,2,Stimmt ganz,1
+51,16,3,Non-Binaer,Mehr als 5h,6,36,Call of Duty,Ja,1,Stimmt nicht,4,Stimmt eher nicht,3
+52,22,5,Maennlich,2h-3h,3,9,Fifa,eher Nein,3,Stimmt eher ,2,Stimmt eher,2
+53,14,2,Weiblich,Mehr als 5h,6,36,Call of Duty,eher Ja,2,Stimmt eher ,2,Stimmt gar nicht,4
+54,16,3,Weiblich,2h-3h,3,9,Clash of Clans,Ja,1,Stimmt eher nicht,3,Stimmt eher,2
+55,17,3,Maennlich,1h-2h,2,4,Fifa,Ja,1,Stimmt,1,Stimmt eher nicht,3
+56,18,4,Maennlich,Mehr als 5h,6,36,Fifa,Ja,1,Stimmt eher nicht,3,Stimmt gar nicht,4
+57,17,3,Maennlich,2h-3h,3,9,Fifa,Ja,1,Stimmt eher ,2,Stimmt eher nicht,3
+58,51,6,Weiblich,3h-4h,4,16,Fifa,eher Ja,2,Stimmt eher ,2,Stimmt ganz,1
+59,55,6,Maennlich,weniger als 1h,1,1,Call of Duty,eher Nein,3,Stimmt eher nicht,3,Stimmt eher,2
+60,16,3,Maennlich,1h-2h,2,4,Call of Duty,eher Ja,2,Stimmt,1,Stimmt eher,2
